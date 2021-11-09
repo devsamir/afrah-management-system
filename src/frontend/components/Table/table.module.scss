@@ -1,0 +1,190 @@
+$primary-color: rgb(61, 137, 229);
+
+.formSearch {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 0 1rem auto;
+  width: 15rem;
+  flex-direction: column;
+}
+.tableContainer {
+  overflow-x: auto;
+  overflow-y: auto;
+  width: 100%;
+  max-height: 80vh;
+}
+.row {
+  cursor: pointer;
+  position: relative;
+}
+.row:hover {
+  background-color: rgba($primary-color, 0.25);
+}
+.rowActive {
+  background-color: rgba($primary-color, 0.25);
+}
+.table {
+  border-collapse: collapse;
+  min-width: 99%;
+  position: relative;
+}
+.table th {
+  position: sticky;
+  top: 0;
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+  color: #fff;
+  z-index: 100;
+  cursor: pointer;
+}
+.table td,
+.table th {
+  padding: 0.6rem;
+  text-align: left;
+}
+.table td {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.table tr:hover {
+  background-image: rgba($primary-color, 0.1);
+}
+.tableFooter {
+  margin: 0.8rem 0.5rem;
+  display: flex;
+}
+
+.selectedInfo {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.tablePagination {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.paginationInfo {
+  margin-right: 3rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+}
+.pagination button {
+  border: none;
+  background-color: transparent;
+  font-size: 1.3rem;
+  outline: none;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+.pagination button:hover {
+  background-color: rgba(51, 51, 51, 0.2);
+}
+.paginationLimit {
+  margin-right: 1rem;
+}
+.paginationLimit select {
+  padding: 0.4rem;
+  font-size: 0.8rem;
+  background-color: #f0f0f0;
+  border: 1px solid rgba(51, 51, 51, 0.2);
+  outline: none;
+}
+.buttonAction {
+  background-color: transparent;
+  border: none;
+  padding: 0.4rem 0.2rem;
+}
+
+.skleton {
+  width: 150px;
+  height: 20px;
+  cursor: progress;
+  background: linear-gradient(0.25turn, transparent, #333, transparent),
+    linear-gradient(#888, #888),
+    radial-gradient(18px circle at 9px 9px, #888 50%, transparent 51%),
+    linear-gradient(#888, #888);
+  background-repeat: no-repeat;
+  background-size: 150px 20px, 150px 12px, 50px 8px, 100px 2px;
+  background-position: -150px 0, 0 0, 0px 60px, 25px 75px;
+  animation: loading 1.5s infinite;
+}
+@keyframes loading {
+  to {
+    background-position: 150px 0, 0 0, 0 60px, 25px 75px;
+  }
+}
+
+/* COPY PASTE FROM W3SCHOOL CHECKBOX */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #e0e0e0;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #e0e0e0;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: $primary-color;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 5px;
+  top: 3px;
+  width: 5px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

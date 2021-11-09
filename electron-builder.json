@@ -1,0 +1,20 @@
+{
+    "appId": "com.devsam.afrah",
+    "productName": "Afrah Management System",
+    "copyright": "DevSam",
+        "win": {
+          "target": "nsis"
+        },
+        "directories": {
+            "app": ".",
+            "output": "dist",
+            "buildResources": "build-res"
+        },
+        "files": [
+            "main.js",
+            "package.json",
+            "build/**/*",
+            "index.html",
+            "node_modules"
+        ]
+}

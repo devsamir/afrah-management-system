@@ -1,0 +1,133 @@
+.sidenav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 100vh !important;
+  z-index: 1000;
+  width: 250px;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(96, 165, 250, 0.65),
+      rgb(37, 99, 235, 0.65)
+    ),
+    url("./sidenav-background.jpg");
+  transform: translateX(-250px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform 300ms;
+  overflow-y: auto;
+}
+.brand {
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+}
+.navLinks {
+  display: flex;
+  flex-direction: column;
+}
+.navLink {
+  border: none;
+  padding: 12px 16px;
+  background-color: transparent;
+  color: #fff;
+  transition: background-color 300ms;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.navLinkDropdown {
+  border: none;
+  padding: 12px 16px 12px 4rem;
+  background-color: transparent;
+  color: #fff;
+  transition: background-color 300ms;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.navLinkDropdown:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.navLink:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.linkIcon {
+  margin-right: 1rem;
+}
+.expandIcon {
+  margin-left: auto;
+}
+.body {
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  box-shadow: 0 0.35rem 0.7rem rgba(0, 0, 0, 0.15);
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0;
+}
+.toggleButton {
+  background-color: transparent;
+  border: none;
+  font-size: 1.6rem;
+  color: rgb(55, 65, 81);
+}
+.settingButton {
+  background-color: transparent !important;
+  color: rgb(55, 65, 81);
+  font-size: 1.2rem;
+}
+.settingButton {
+  outline: none;
+  box-shadow: none;
+}
+.sidenavOpen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: rgba(51, 51, 51, 0.15);
+  z-index: 1000;
+}
+.sidenavActive {
+  transform: translateX(0);
+}
+.sidebarMixins {
+  min-width: 0;
+}
+
+.divider {
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  font-size: 1.1rem;
+}
+.container {
+  min-width: calc(100% - 250px);
+  padding: 0 1rem;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+@media only screen and (min-width: 1000px) {
+  .sidenav {
+    transform: translateX(0);
+  }
+  .sidenavOpen {
+    width: 0;
+    height: 0;
+  }
+  .sidebarMixins {
+    min-width: 250px;
+  }
+}
